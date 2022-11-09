@@ -4,9 +4,17 @@ def test_turn_left():
     robot1 = robot(5, 5)
     assert robot1.move("L") == (1, 1, "West")
 
+def test_turn_left_360():
+    robot1 = robot(5, 5)
+    assert robot1.move("LLLL") == (1, 1, "North")
+
 def test_turn_right():
     robot1 = robot(5, 5)
     assert robot1.move("R") == (1, 1, "East")
+
+def test_turn_right_360():
+    robot1 = robot(5, 5)
+    assert robot1.move("RRRR") == (1, 1, "North")
 
 def test_move_forward():
     robot1 = robot(5, 5)
@@ -33,8 +41,8 @@ def test_medium_command():
     assert robot1.move("FFRFLFLF") == (1, 4, "West")
 
 def test_huge_command():
-    robot1 = robot(5, 5)
-    assert robot1.move("FFRFLFLFRFFLFFRL" * 100) == (5, 4, "North")
+    robot1 = robot(100, 100)
+    assert robot1.move("FFRFLFLFRFFLFFRL" * 1000) == (9, 4, "North")
 
 def test_huge_map():
     robot1 = robot(10000000000000000, 10000000000000000)
