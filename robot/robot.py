@@ -49,3 +49,6 @@ class robot:
 
     def get_position(self):
         return (self.x, self.y, self.directions[self.direction_index])
+    
+    def print_position(self):
+        print(f'{self.x},{self.y},{self.directions[self.direction_index]}')
